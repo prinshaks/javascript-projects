@@ -32,7 +32,7 @@ preparedForLiftOff=false;
 if (!(astronautCount >7)){
     if (astronautStatus==="ready"){
        if (totalMassKg<maximumMassLimit){
-        if( !(fuelTempCelsius <-300) || !(fuelTempCelsius >-150)){
+        if( !(fuelTempCelsius <-300) && !(fuelTempCelsius >-150)){
             if(fuelLevel===100){
                 if(weatherStatus==="clear"){
                     preparedForLiftOff=true;
