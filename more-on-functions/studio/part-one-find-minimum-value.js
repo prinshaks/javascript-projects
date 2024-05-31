@@ -7,4 +7,21 @@ let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
 
 //Using one of the test arrays as the argument, call your function inside the console.log statement below.
 
-console.log(/* your code here */);
+let counter = 0;
+function findMinValue(arr){
+for (let i=0;i<arr.length; i++){
+    counter = 0;
+    for(let j=0;j<arr.length; j++){
+        if(arr[i] <= arr[j]){
+            counter = counter + 1;
+        }
+    }
+    if (counter === arr.length){
+        return arr[i];
+    }
+}
+
+}
+console.log(findMinValue(nums1));
+console.log(findMinValue(nums2));
+console.log(findMinValue(nums3));
