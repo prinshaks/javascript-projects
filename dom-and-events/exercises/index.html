@@ -4,6 +4,27 @@
         <title>Flight Simulator</title>
         <link rel="stylesheet" type="text/css" href="style.css"/>
         <script src = "script.js"></script>
+        <script>
+            window.addEventListener("load", function() {
+                let takeOff=document.getElementById("liftoffButton");
+                takeOff.addEventListener("click",function(){
+                    document.getElementById("statusReport").innerHTML = "Houston, we have liftoff!";
+                })
+                let abort=document.getElementById("abortMission");
+                abort.addEventListener("mouseover",function(){
+                    abort.style.backgroundColor = "red";
+                })    
+                abort.addEventListener("mouseout",function(){
+                    abort.style.backgroundColor = "";
+                })  
+                abort.addEventListener("click",function(){
+                    let result = window.confirm("Are you sure you want to abort the mission?");
+                    if (result==true){
+                        document.getElementById("statusReport").innerHTML = "Mission aborted! Space shuttle returning home";
+                    }
+                })                                              
+            });
+        </script>
     </head>
     <body>
         <h1>Flight Simulator</h1>
