@@ -6,9 +6,46 @@
     <style>
       label { display: block; margin-bottom: 7px;}
     </style>
+    <script>
+      window.addEventListener("load",function (){
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function(event) {
+          let testName = document.querySelector("input[name=testName]");
+          let testDate = document.querySelector("input[name=testDate]");
+          let rocketType = document.querySelector("select[name=rocketType]");
+          let rocketBoosterNum = document.querySelector("input[name=rocketBoosterNum]");
+          let windRating = document.querySelector("input[name=windRating]");
+          let useProductionServers = document.querySelector("input[name=useProductionServers]");
+
+          if(testName.value==="" || testDate.value ==="" || rocketType.value ==="" || rocketBoosterNum.value ==="" || windRating.value === "" || useProductionServers.value === ""){
+            alert("All fields are required!");
+            event.preventDefault();
+          }
+          
+        });
+
+      })
+    </script>
   </head>
   <body>
     <!-- TODO: add form here -->
+     <form method="post" action="https://handlers.education.launchcode.org/request-parrot">
+      <label>Test Name <input type="text" name="testName"/></label>
+      <label>Test Date <input type="date" name="testDate" /></label>
+      <label>Rocket Type <select name="rocketType">
+        <option value="Brant">Brant</option>
+        <option value="Lynx">Lynx</option>
+        <option value="Orion">Orion</option>
+        <option value="Terrier">Terrier</option>
+      </select></label>
+      <label>Number of Rocket Boosters <input type="number" name="rocketBoosterNum" /></label>
+      <label>Wind Rating: </label>
+      <label>No Wind<input type="radio" name="windRating" value="0"/></label>
+      <label>Mild<input type="radio" name="windRating" value="10"/></label>
+      <label>Strong<input type="radio" name="windRating" value="20"/></label>
+      <label>Use production grade servers<input type="checkbox" name="useProductionServers" value="off"/></label>
+      <button>Run Simulation</button>
+     </form>
   </body>
   
 </html>
